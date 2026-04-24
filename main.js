@@ -18,22 +18,24 @@ btn.addEventListener("click", () => {
 
 	// // Adjust for negative months and days
 
-	// if (days < 0) {
-	// 	months--;
-	// 	const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-	// 	days += lastMonth.getDate();
-	// }
+	if (days < 0) {
+		months--;
+		const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+		days += lastMonth.getDate();
+	}
 
 	// // Adjust for negative months
 
-	// if (months < 0) {
-	// 	years--;
-	// 	months += 12;
+	if (months < 0) {
+		years--;
+		months += 12;
+	}
+
+	// if (birtDate > today) {
+	// 	result.textContent = "You are not born yet!";
+	// } else {
+	// 	result.textContent = `You age is : ${years} years, ${months} months, and ${days} days old.`;
 	// }
 
-	if (birtDate > today) {
-		result.textContent = "You are not born yet!";
-	} else {
-		result.textContent = `You age is : ${years} years, ${months} months, and ${days} days old.`;
-	}
+	result.textContent = `You age is : ${years} years, ${months} months, and ${days} days old.`;
 });
